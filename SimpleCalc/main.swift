@@ -16,8 +16,8 @@ while(runProgram) {
     var response = readLine(strippingNewline: true)!
     var split = response.components(separatedBy:" ")
     if(split.count == 1 && split[0] != "") {
-        var operation = readLine()!
-        var userPrompt = readLine()!
+        var operation = readLine(strippingNewline: true)!
+        var userPrompt = readLine(strippingNewline: true)!
         if(Double(response) != nil && Double(userPrompt) != nil) {
             var firstValue: Double = Double(response)!
             var secondValue: Double = Double(userPrompt)!
@@ -66,6 +66,8 @@ while(runProgram) {
                         }
                         print(result)
                     }
+                } else {
+                    print("Please use an integer!")
                 }
             } else {
                 print("Please enter only one number when using factorial")
