@@ -5,7 +5,7 @@
 //  Created by Albert on 10/5/16.
 //  Copyright © 2016 ischool. All rights reserved.
 //
-
+//  Extra credit: Doubles and negatives SHOULD work!
 import Foundation
 print("Welcome to the Calculator App!")
 print("Please enter your commands now")
