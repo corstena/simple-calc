@@ -38,7 +38,7 @@ while(runProgram) {
         } else {
             print("Please enter valid numbers.")
         }
-    } else if(split.count > 1) {s
+    } else if(split.count > 1) {
         var numberFunction: String = split[split.count - 1]
         switch numberFunction {
         case "count":
