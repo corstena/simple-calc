@@ -33,12 +33,12 @@ while(runProgram) {
                 case "%":
                     print(firstValue.truncatingRemainder(dividingBy: secondValue))
                 default:
-                    print("Please choose an operation from the following: +, -, *, /")
+                    print("Please choose an operation from the following: +, -, *, /, %")
                 }
         } else {
             print("Please enter valid numbers.")
         }
-    } else if(split.count > 1) {
+    } else if(split.count > 1) {s
         var numberFunction: String = split[split.count - 1]
         switch numberFunction {
         case "count":
@@ -53,18 +53,22 @@ while(runProgram) {
             }
             print(total / (Double(split.count - 1)))
         case "fact":
-            var result: Int = 1
-            if(Int(split[0]) != nil) {
-                if(Int(split[0]) == 0) {
-                    print("1")
-                } else if(Int(split[0])! < 0) {
-                    print("Cannot factorial a negative number!")
-                } else {
-                    for currentMultiplier: Int in ((0 + 1)...Int(split[0])!).reversed() {
-                        result *= currentMultiplier
+            if(split.count == 2) {
+                if(Int(split[0]) != nil) {
+                    var result: Int = 1
+                    if(Int(split[0]) == 0) {
+                        print("1")
+                    } else if(Int(split[0])! < 0) {
+                        print("Cannot factorial a negative number!")
+                    } else {
+                        for currentMultiplier: Int in ((0 + 1)...Int(split[0])!).reversed() {
+                            result *= currentMultiplier
+                        }
+                        print(result)
                     }
-                    print(result)
                 }
+            } else {
+                print("Please enter only one number when using factorial")
             }
         default:
             print("Please choose one of the following functions: count, avg, fact")
