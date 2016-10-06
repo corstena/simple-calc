@@ -16,22 +16,27 @@ while(runProgram) {
     var response = readLine(strippingNewline: true)!
     var split = response.components(separatedBy:" ")
     if(split.count == 1 && split[0] != "") {
-        var firstValue: Double = Double(split[0])!
         var operation = readLine()!
-        var secondValue: Double = Double(readLine()!)!
-        switch operation {
-        case "+":
-            print(firstValue + secondValue)
-        case "-":
-            print(firstValue - secondValue)
-        case "/":
-            print(firstValue / secondValue)
-        case "*":
-            print(firstValue * secondValue)
-        case "%":
-            print(firstValue.truncatingRemainder(dividingBy: secondValue))
-        default:
-            print("Please choose an operation from the following: +, -, *, /")
+        var userPrompt = readLine()!
+        if(Double(response) != nil && Double(userPrompt) != nil) {
+            var firstValue: Double = Double(response)!
+            var secondValue: Double = Double(userPrompt)!
+                switch operation {
+                case "+":
+                    print(firstValue + secondValue)
+                case "-":
+                    print(firstValue - secondValue)
+                case "/":
+                    print(firstValue / secondValue)
+                case "*":
+                    print(firstValue * secondValue)
+                case "%":
+                    print(firstValue.truncatingRemainder(dividingBy: secondValue))
+                default:
+                    print("Please choose an operation from the following: +, -, *, /")
+                }
+        } else {
+            print("Please enter valid numbers.")
         }
     } else if(split.count > 1) {
         var numberFunction: String = split[split.count - 1]
